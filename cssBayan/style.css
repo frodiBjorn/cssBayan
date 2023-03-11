@@ -35,6 +35,8 @@ body {
 }
 
 .accordion__header {
+    padding-top: 1rem;
+    text-align: center;
     cursor: pointer;
     color: rgb(48, 48, 250);
     font-size: 2rem;
@@ -45,6 +47,7 @@ body {
 }
 .accordion__open {
     display: none;
+
     width: 7%;
     background-image: url("./assets/icons/plus.png");
     background-size: 1.8rem;
@@ -57,6 +60,7 @@ input[type="radio"] {
     visibility: hidden;
 }
 .accordion__content {
+    margin-top: 0.5rem;
     cursor: pointer;
     opacity: 0;
     max-height: 0;
@@ -98,4 +102,53 @@ input[type="radio"] {
 }
 .accordion__label:active .accordion__content {
     opacity: 0.7;
+}
+@media screen and (max-width: 820px) {
+    .title {
+        font-size: 2rem;
+    }
+    .accordion__header {
+        font-size: 1.3rem;
+        padding-top: 1.5rem;
+    }
+    .accordion__open {
+        background-size: 1.2rem;
+    }
+    .accordion__content {
+        cursor: default;
+    }
+    .accordion__header {
+        cursor: default;
+    }
+    .accordion{
+        cursor: default;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .accordion__content {
+        cursor: default;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .accordion__header {
+        font-size: 0.6rem;
+    }
+    .accordion__open {
+        background-size: 0.7rem;
+    }
+    .accordion__content {
+        cursor: default;
+    }
+    .accordion__header {
+        cursor: default;
+    }
+    .accordion{
+        cursor: default;
+    }
+    .accordion__label{
+        height: 2rem;
+    }
+
 }
