@@ -29,8 +29,18 @@ body {
     background-size: 1.5rem;
     background-repeat: no-repeat;
 }
-input[type="radio" i] {
+input[type="radio"] {
     opacity: 0;
     height: 0;
     visibility: hidden;
+}
+.accordion__content {
+    opacity: 0;
+    max-height: 0;
+    cursor: pointer;
+}
+.accordion input:checked ~ .accordion__content {
+    opacity: 1;
+    max-height: 100%;
+    transition: all 0.8s ease-in-out;
 }
