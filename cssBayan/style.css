@@ -5,6 +5,7 @@
 }
 body {
     background-color: rgb(252, 253, 241, 0.5);
+    font-family: Roboto;
 }
 .wrapper {
     max-width: 50%;
@@ -40,6 +41,7 @@ body {
     border-top: 0.1rem solid gray;
     display: flex;
     justify-content: space-between;
+    transition: all 0.3s ease-in-out;
 }
 .accordion__open {
     display: none;
@@ -47,6 +49,7 @@ body {
     background-image: url("./assets/icons/plus.png");
     background-size: 1.8rem;
     background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
 }
 input[type="radio"] {
     opacity: 0;
