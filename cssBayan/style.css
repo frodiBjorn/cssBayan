@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     background-color: rgb(252, 253, 241, 0.5);
 }
@@ -6,27 +11,41 @@ body {
     margin: 0 auto;
 }
 .title {
+    margin: 1rem 0;
     font-size: 3rem;
     font-weight: bold;
 }
 .accordion {
-    flex-direction: column;
-    display: flex;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
     color: #000;
 }
+.accordion__label {
+    margin-top: 1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+.accordion:hover .accordion__open {
+    display: block;
+}
+.accordion:hover .accordion__header {
+    color: rgb(48, 48, 250);
+}
+
 .accordion__header {
     cursor: pointer;
-    color: rgb(19, 19, 255);
+    color: rgb(48, 48, 250);
     font-size: 2rem;
-    border-top: 0.02rem solid gray;
+    border-top: 0.1rem solid gray;
     display: flex;
     justify-content: space-between;
 }
 .accordion__open {
+    display: none;
     width: 7%;
     background-image: url("./assets/icons/plus.png");
-    background-size: 1.5rem;
+    background-size: 1.8rem;
     background-repeat: no-repeat;
 }
 input[type="radio"] {
@@ -35,19 +54,45 @@ input[type="radio"] {
     visibility: hidden;
 }
 .accordion__content {
+    cursor: pointer;
     opacity: 0;
     max-height: 0;
-    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.accordion__content img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.accordion:hover .accordion__header {
+    color: #000;
+}
+.accordion__label:hover .accordion__content {
+    opacity: 1;
+    max-height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.accordion__label:hover .accordion__header .accordion__open {
+    background-image: url("./assets/icons/cross.png");
 }
 .accordion input:checked ~ .accordion__content {
+    display: block;
     opacity: 1;
     max-height: 100%;
     transition: all 0.8s ease-in-out;
 }
-.accordion input:checked  ~ .accordion__header {
+.accordion input:checked ~ .accordion__header {
     color: #000;
 }
-.accordion input:checked  + .accordion__header .accordion__open {
-    background-image: url('./assets/icons/cross.png');
-
+.accordion input:checked + .accordion__header .accordion__open {
+    background-image: url("./assets/icons/cross.png");
+}
+.accordion__label:active .accordion__header {
+    color: rgb(48, 48, 250);
+}
+.accordion__label:active .accordion__header .accordion__open {
+    background-image: url("./assets/icons/blue_cross.png");
+}
+.accordion__label:active .accordion__content {
+    opacity: 0.7;
 }
