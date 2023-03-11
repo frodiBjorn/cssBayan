@@ -1,4 +1,4 @@
-body{
+body {
     background-color: rgb(252, 253, 241, 0.5);
 }
 .wrapper {
@@ -13,7 +13,7 @@ body{
     flex-direction: column;
     display: flex;
     cursor: pointer;
-    color:#000;
+    color: #000;
 }
 .accordion__header {
     cursor: pointer;
@@ -22,5 +22,15 @@ body{
     border-top: 0.02rem solid gray;
     display: flex;
     justify-content: space-between;
-
+}
+.accordion__open {
+    width: 7%;
+    background-image: url("./assets/icons/plus.png");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+}
+input[type="radio" i] {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
 }
