@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(252, 253, 241, 0.5);
+}
+.wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.accordion {
+    flex-direction: column;
+    display: flex;
+    cursor: pointer;
+    color:#000;
+}
+.accordion__header {
+    cursor: pointer;
+    color: rgb(19, 19, 255);
+    font-size: 2rem;
+    border-top: 0.02rem solid gray;
+    display: flex;
+    justify-content: space-between;
+
+}
