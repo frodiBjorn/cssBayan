@@ -44,3 +44,10 @@ input[type="radio"] {
     max-height: 100%;
     transition: all 0.8s ease-in-out;
 }
+.accordion input:checked  ~ .accordion__header {
+    color: #000;
+}
+.accordion input:checked  + .accordion__header .accordion__open {
+    background-image: url('./assets/icons/cross.png');
+
+}
