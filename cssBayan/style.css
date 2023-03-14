@@ -100,13 +100,13 @@ input[type="radio"] {
         background-image: url("./assets/icons/cross.png");
     }
     .accordion__label:active .accordion__header .accordion__open {
-        background-image: url("./assets/icons/blue_cross.png");
+        background-image: url("./assets/icons/red_cross.png");
     }
     .accordion__label:active .accordion__content {
         opacity: 0.7;
     }
     .accordion__label:active .accordion__header {
-        color: rgb(48, 48, 250);
+        color: #da2929;
     }
 } 
 @media screen and (max-width: 820px) {
