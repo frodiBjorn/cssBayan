@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(252, 253, 241, 0.5);
+    font-family: Roboto;
+}
+.wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.title {
+    margin: 1rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.accordion {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: #000;
+}
+.accordion__label {
+    margin-top: 1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.accordion__header {
+    padding-top: 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(48, 48, 250);
+    font-size: 2rem;
+    border-top: 0.1rem solid gray;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+.accordion__open {
+    display: none;
+
+    width: 7%;
+    background-image: url("./assets/icons/plus.png");
+    background-size: 1.8rem;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
+}
+input[type="radio"] {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+}
+.accordion__content {
+    margin-top: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.5s ease-in-out;
+}
+.accordion__content img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.accordion input:checked ~ .accordion__content {
+    display: block;
+    opacity: 1;
+    max-height: 100%;
+    transition: all 0.8s ease-in-out;
+}
+.accordion input:checked ~ .accordion__header {
+    color: #000;
+}
+.accordion input:checked:active + .accordion__header {
+    color: #da2929;
+}
+.accordion input:checked:active .accordion__header .accordion__open {
+    background-image: url("./assets/icons/red_cross.png");
+}
+.accordion input:checked:active ~ .accordion__content {
+    opacity: 0.7;
+}
+.accordion input:checked .accordion__header .accordion__open {
+    background-image: url("./assets/icons/cross.png");
+}
+.accordion__label:active .accordion__header {
+    color: rgb(48, 48, 250);
+}
+
+@media (hover: hover) {
+    /*фиксация hover только для десктопа*/
+    .accordion__label:hover .accordion__content {
+        opacity: 1;
+        max-height: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+    .accordion:hover .accordion__header {
+        color: #000;
+    }
+    .accordion:hover .accordion__open {
+        display: block;
+    }
+
+    .accordion__label:hover .accordion__header .accordion__open {
+        background-image: url("./assets/icons/cross.png");
+    }
+    .accordion__label:active .accordion__header .accordion__open {
+        background-image: url("./assets/icons/red_cross.png");
+    }
+    .accordion__label:active .accordion__content {
+        opacity: 0.7;
+    }
+    .accordion__label:active .accordion__header {
+        color: #da2929;
+    }
+}
+@media screen and (max-width: 820px) {
+    .title {
+        font-size: 2rem;
+    }
+    .accordion__header {
+        font-size: 1.3rem;
+        padding-top: 1.5rem;
+    }
+    .accordion__open {
+        background-size: 1.2rem;
+    }
+    .accordion__content {
+        cursor: default;
+    }
+    .accordion__header {
+        cursor: default;
+    }
+    .accordion {
+        cursor: default;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .accordion__content {
+        cursor: default;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .accordion__header {
+        font-size: 0.6rem;
+    }
+    .accordion__open {
+        background-size: 0.7rem;
+    }
+    .accordion__content {
+        cursor: default;
+    }
+    .accordion__header {
+        cursor: default;
+    }
+    .accordion {
+        cursor: default;
+    }
+    .accordion__label {
+        height: 2rem;
+    }
+}
